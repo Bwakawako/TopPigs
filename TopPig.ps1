@@ -10,8 +10,6 @@ Function GetDirectorySize([string]$Path)
     return $result.Sum
 }
 
-GetDirectorySize "C:\Users\nviet\Desktop\batch\BAS"
-
 $Directories = @{}
 
 dir -Path $Path -Recurse -Force |? { $_.PSIsContainer -eq $True } |% { $Directories.Add($_.FullName, (GetDirectorySize $_.FullName) / 1000000)  }
