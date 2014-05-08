@@ -20,4 +20,3 @@ dir -Path $Path -Recurse -Force |? { $_.PSIsContainer -eq $True } |% { $Director
 
 #TODO Script block : { $_.Value }. COmment ca marche?
 $Directories.GetEnumerator() | Sort-Object { $_.Value } -Descending | Select-Object -First $HeadNumber | Format-Table -Property Key, Value -AutoSize
-#C:\Users\nviet\Desktop\batch\TopPig.ps1
