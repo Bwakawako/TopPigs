@@ -15,6 +15,6 @@ $Directories = @{}
 dir -Path $Path -Recurse -Force |? { $_.PSIsContainer -eq $True } |% { $Directories.Add($_.FullName, (GetDirectorySize $_.FullName) / 1000000)  }
 
 "Taille en Mo"
-
+#Je suis un commentaire ajouter dans la testBranche
 #TODO Script block : { $_.Value }. Comment ca marche?
 $Directories.GetEnumerator() | Sort-Object { $_.Value } -Descending | Select-Object -First $HeadNumber | Format-Table -Property Key, Value -AutoSize
