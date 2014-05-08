@@ -16,5 +16,5 @@ dir -Path $Path -Recurse -Force |? { $_.PSIsContainer -eq $True } |% { $Director
 
 "Taille en Mo"
 
-#TODO Script block : { $_.Value }. COmment ca marche?
+#TODO Script block : { $_.Value }. Comment ca marche?
 $Directories.GetEnumerator() | Sort-Object { $_.Value } -Descending | Select-Object -First $HeadNumber | Format-Table -Property Key, Value -AutoSize
